@@ -1,0 +1,46 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+
+.nucleus{
+    margin-top: 40px;
+    .nucleus__heading{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .nucleus__grid{
+        @include m.grid(2,20px);   
+        place-items: center; 
+        justify-items: end;
+        @include m.telefono{
+            display: flex;
+            flex-direction: column;
+        }
+
+       
+
+        .listado{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            .listado__elemento{
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                margin-bottom: 20px;
+                padding:0 5px;
+                transition: transform 0.3s ease;
+               
+                &:hover {
+                    transform: scale(1.1); 
+                }
+
+                .listado__heading{
+                    text-align: center;
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    color: v.$morado;
+                }
+            }
+        }
+    }
+}

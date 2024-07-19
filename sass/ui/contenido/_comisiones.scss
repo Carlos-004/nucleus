@@ -1,0 +1,63 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.comisiones{
+    margin-top: 40px;
+    .comisiones__contenedor {
+        .comisiones__heading{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .comisiones__grid{
+            @include m.grid(2,20px);
+            place-items: center;
+            justify-items: start;
+            @include m.telefono{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .comisiones__contenido{
+                .comisiones__texto{
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+
+                .listado{
+                    .listado__elemento{
+                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                        margin-bottom: 20px;
+                        padding:0 5px;
+                        transition: transform 0.3s ease;
+                       
+                        &:hover {
+                            transform: scale(1.1); 
+                        }
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 20px;
+
+                        .listado__numero{
+                            color: v.$morado;
+                            font-weight: bold;
+                            font-size: 34px;
+                        }
+                        .listado__texto{
+                            font-size: 22px;
+                            @include m.telefono{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .comisiones__imagen{
+                display: grid;
+            }
+        }
+    }
+}

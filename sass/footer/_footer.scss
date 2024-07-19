@@ -1,0 +1,22 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer{
+    padding: 40px 0;
+    background-color: v.$morado-claro;
+
+    .footer__grid{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include m.telefono{
+            flex-direction: column;
+            justify-self: unset;
+
+            .navegacion__link--blanco{
+                color: v.$blanco;
+            }
+        }
+    }
+}

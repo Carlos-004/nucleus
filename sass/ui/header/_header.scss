@@ -1,0 +1,95 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.header{
+    background-image: url(../img/header_bg.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 50px 0;
+    
+    .header__container{
+        .header__barra{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include m.telefono{
+                justify-self: unset;
+                flex-direction: column;
+            }
+
+            .header__logo{
+                img{
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+
+
+@include m.tablet{
+    .header {
+        background-size: 500px;
+    }
+}
+@include m.netbook{
+    .header {
+        background-size: 700px;
+    }
+}
+@include m.telefono{
+    .header {
+        background-size: 100px;
+    }
+}
+@include m.laptop{
+    .header {
+        background-size: 1100px;
+    }
+}
+@include m.desktop{
+    .header {
+        background-size: 1600px;
+    }
+}
+
+.header__grid{
+    @include m.grid(2,40px);
+    place-items: center;
+
+    .header__boton{
+        background-color: v.$morado;
+        padding: 10px;
+        color: v.$blanco;
+        display: block;
+        width: 200px;
+        text-align: center;
+    }
+
+    
+      
+    
+    @include m.netbook{
+        .header__heading{
+            font-size: 32px;
+        }
+    }
+    @include m.tablet{
+        .header__heading{
+            font-size: 28px;
+        }
+    }
+    @include m.telefono{
+        display: flex;
+        flex-direction: column;
+
+        .header__heading{
+            font-size: 32px;
+        }
+        .header__boton{
+            width: 100%;
+        }
+    } 
+   
+}
